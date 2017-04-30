@@ -1,0 +1,6 @@
+{
+  "scriptName": "selectel-dns",
+  "curlOptions": "-L",
+  "hostEnvironmentVariable": "SELECTEL_API_URL",
+  "apiKeyAuthEnvironmentVariable": "SELECTEL_API_KEY"
+}
