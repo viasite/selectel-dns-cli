@@ -3396,6 +3396,10 @@ case $key in
     if [[ "$operation" ]]; then
         IFS='==' read body_key sep body_value <<< "$key"
         body_parameters[${body_key}]="\"${body_value}\""
+        # pass path to file for bind_zone
+        if [ "$body_key" = "bind_zone" ] && [ -e "$body_value" ]; then
+            body_parameters[${body_key}]="$(cat "${body_value}" | python -c 'import json,sys; print(json.dumps(sys.stdin.read()))')"
+        fi
     fi
     ;;
     *:=*)
