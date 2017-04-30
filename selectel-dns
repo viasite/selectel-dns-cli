@@ -174,11 +174,11 @@ declare -A body_parameters
 
 ##
 # These arguments will be directly passed to cURL
-curl_arguments=""
+curl_arguments="-L"
 
 ##
 # The host for making the request
-host="$SELECTEL_API_URL"
+host="https://api.selectel.ru"
 
 ##
 # The user credentials for basic authentication
@@ -619,7 +619,7 @@ $(tput bold)$(tput setaf 7)Usage$(tput sgr0)
            [$(tput setaf 5)<parameters>$(tput sgr0)] [$(tput setaf 5)<body-parameters>$(tput sgr0)]
 
   - $(tput setaf 6)<url>$(tput sgr0) - endpoint of the REST service without basepath
-           Can also be specified in SELECTEL_API_URL environment variable.
+
   - $(tput setaf 1)<curl-options>$(tput sgr0) - any valid cURL options can be passed before $(tput setaf 3)<operation>$(tput sgr0)
   - $(tput setaf 2)<mime-type>$(tput sgr0) - either full mime-type or one of supported abbreviations:
                    (text, html, md, csv, css, rtf, json, xml, yaml, js, bin,
